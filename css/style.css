@@ -1,0 +1,261 @@
+/* =========================================
+   VARIABLES GLOBALES (Fáciles de cambiar)
+   ========================================= */
+:root {
+    --color-fondo: #f4f4f9;
+    --color-texto: #333333;
+    --color-primario: #1e293b; /* Azul/Gris oscuro muy elegante */
+    --color-acento: #ea580c; /* Naranja mecánico para botones */
+    --color-blanco: #ffffff;
+    --fuente-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================================
+   RESETEO BÁSICO
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Para que al hacer clic en el menú baje suavemente */
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* =========================================
+   CABECERA Y NAVEGACIÓN (PC)
+   ========================================= */
+header {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.logo img {
+    height: 55px; /* Altura ideal para la barra. Puedes subirlo a 60 o bajarlo a 40 si quieres */
+    width: auto; /* Mantiene la proporción para que no se estire feo */
+    display: block; /* Quita espacios fantasma debajo de la imagen */
+    transition: transform 0.3s ease; /* Prepara una mini animación */
+}
+
+/* Efecto al pasar el mouse por encima del logo */
+.logo img:hover {
+    transform: scale(1.05);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-acento);
+}
+
+/* =========================================
+   SECCIÓN HERO (Inicio)
+   ========================================= */
+.hero {
+    /* Aquí luego pondremos una foto de fondo del taller o la DFSK */
+    background: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url('../assets/hero-bg.jpg') center/cover;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-blanco);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.btn-primary {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   SECCIONES GENERALES
+   ========================================= */
+section {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    color: var(--color-primario);
+    margin-bottom: 2rem;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-acento);
+    margin: 10px auto 0;
+}
+
+/* =========================================
+   GRID DE TRABAJOS Y MARCAS
+   ========================================= */
+.grid-trabajos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ========================================= */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   PIE DE PÁGINA
+   ========================================= */
+footer {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--color-blanco);
+    cursor: pointer;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO (Celulares - Max 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Mostramos el botón hamburguesa */
+    .menu-toggle {
+        display: block; 
+    }
+    
+    /* Escondemos el menú a un lado de la pantalla */
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Justo debajo de la cabecera */
+        left: -100%; /* Fuera de la vista */
+        flex-direction: column;
+        background-color: var(--color-primario);
+        width: 100%;
+        text-align: center;
+        transition: 0.4s ease; /* Animación suave */
+        padding: 2rem 0;
+        gap: 1.5rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Esta es la clase que el JS activará para que el menú aparezca */
+    .nav-links.active {
+        left: 0; 
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+}
