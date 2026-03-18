@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicio Automotriz Especializado | DFSK 580 Glory</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -31,37 +32,144 @@
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <h1>Expertos en Mecánica Multimarca</h1>
-            <p>Especialistas en el cuidado y mantención de tu <strong>DFSK 580 Glory</strong>.</p>
-            <a href="#contacto" class="btn-primary">Agendar Cita</a>
-        </section>
+        <section id="inicio" class="hero" id="hero-container">
+            
+            <div class="marcas-flotantes" id="marcas-flotantes">
+                </div>
 
-        <section id="especialidad">
-            <h2>Nuestra Especialidad</h2>
-            <p>[Aquí irá la foto e info detallada de la DFSK 580 Glory]</p>
-        </section>
+            <div class="hero-overlay"></div>
 
-        <section id="servicios">
-            <h2>Marcas y Trabajos Realizados</h2>
-            <div class="grid-trabajos">
-                <div class="card">Trabajo 1 (Relleno)</div>
-                <div class="card">Trabajo 2 (Relleno)</div>
+            <div class="hero-contenido">
+                <h1>Expertos en mecánica multimarca</h1>
+                <a href="#contacto" class="btn-primary">Agendar Cita</a>
             </div>
         </section>
 
-        <section id="contacto">
-            <h2>Contáctanos</h2>
-            <p>Estamos ubicados en [Dirección / Ciudad]</p>
+        <section id="especialidad" class="especialidad-section">
+            <div class="especialidad-container">
+                
+                <div class="especialidad-texto">
+                    <h2>Especialistas en DFSK 580 Glory</h2>
+                    <p class="etiqueta-experiencia">Más de 4 años de experiencia con este modelo</p>
+                    <p>Conocemos la DFSK 580 Glory al derecho y al revés (es nuestro vehículo de uso diario). Esto nos permite ofrecer diagnósticos precisos y soluciones rápidas para cualquier requerimiento que tenga su camioneta.</p>
+                    
+                    <ul class="lista-especialidad">
+                        <li><i class="fas fa-check-circle"></i> Pautas de mantención por kilometraje</li>
+                        <li><i class="fas fa-check-circle"></i> Mecánica general y preventiva</li>
+                        <li><i class="fas fa-check-circle"></i> Revisión de frenos, tren delantero y suspensión</li>
+                        <li><i class="fas fa-check-circle"></i> Entre muchas otras, consultar por trabajo en especifico</li>
+
+                    </ul>
+                </div>
+
+                <div class="especialidad-imagen">
+                    <img src="assets/580.jpg" alt="Mantenimiento DFSK 580 Glory">
+                </div>
+
+            </div>
+        </section>
+
+       <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            
+            <div class="carrusel-wrapper">
+                <button class="carrusel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="carrusel-contenedor">
+                    <div class="carrusel-track">
+                        
+                        <div class="tarjeta-servicio">
+                            <img src="assets/serv-frenos.jpg" alt="Frenos y Suspensión">
+                            <div class="servicio-info">
+                                <h3>Frenos y suspensión</h3>
+                                <p>Cambio de pastillas, rectificado de discos y revisión del tren delantero para un frenado seguro.</p>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-servicio">
+                            <img src="assets/serv-motor.jpg" alt="Afinamiento de Motor">
+                            <div class="servicio-info">
+                                <h3>Afinamiento de motor</h3>
+                                <p>Cambio de aceite, filtros, bujías y limpieza de cuerpo de aceleración para máximo rendimiento.</p>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-servicio">
+                            <img src="assets/serv-revision.jpg" alt="Revisión de Vehículo">
+                            <div class="servicio-info">
+                                <h3>Revisión y diagnóstico</h3>
+                                <p>Inspección visual y mecánica minuciosa para evaluar el estado general de tu vehículo y asesorarte sobre los mantenimientos que realmente necesita.</p>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-servicio">
+                            <img src="assets/serv-refrigeracion.jpg" alt="Sistema de Refrigeración">
+                            <div class="servicio-info">
+                                <h3>Sistema de refrigeración</h3>
+                                <p>Detección de fugas, cambio de bomba de agua, termostato y líquido refrigerante para proteger tu motor de sobrecalentamientos.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carrusel-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+       <section id="contacto">
+            <h2>Contáctanos y agenda tu cita</h2>
+            
+            <div class="contacto-container">
+                <div class="contacto-info">
+                    <h3>Traiga su vehículo o vamos a su domicilio</h3>
+                    <p>Atendemos en nuestro taller o vamos donde nos necesites para tu comodidad.</p>
+                    
+                    <ul class="info-lista">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación:</strong>
+                                <span>Sector El Bosque, Santiago.<br><em>(La dirección exacta se entrega por interno al confirmar la cita).</em></span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-car-side"></i>
+                            <div>
+                                <strong>Cobertura a domicilio:</strong>
+                                <span>Cercanías de El Bosque. Si estás en una comuna más alejada, ¡escríbenos y lo coordinamos!</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horario de atención:</strong>
+                                <span>Lunes a Viernes: 09:00 a 18:00 hrs<br>Sábados: 09:00 a 14:00 hrs</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-wallet"></i>
+                            <div>
+                                <strong>Medios de pago:</strong>
+                                <span>Efectivo y Transferencia Bancaria</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contacto-mapa">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53232.09117865293!2d-70.69707168019777!3d-33.56545700810141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662db1e3ec9ed17%3A0xe5cd6bfaec1e07db!2sEl%20Bosque%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1710715000000!5m2!1ses-419!2scl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
+            </div>
         </section>
     </main>
 
-    <a href="https://wa.me/tunumerodecelular" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/56984133498?text=Hola,%20vengo%20desde%20su%20página%20web%20y%20me%20gustaría%20agendar%20una%20cita%20para%20mi%20vehículo." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Agendar</span>
     </a>
 
     <footer>
-        <p>&copy; 2024 Taller Mecánico - Diseñado con cariño para mi padre.</p>
+        <p>&copy; 2026 Taller Mecánico a domicilio </p>
     </footer>
 
     <script src="js/script.js"></script>

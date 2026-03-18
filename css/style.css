@@ -82,32 +82,92 @@ nav {
     color: var(--color-acento);
 }
 
+
 /* =========================================
-   SECCIÓN HERO (Inicio)
+   SECCIÓN HERO (Logos Rebotando - Estilo DVD)
    ========================================= */
 .hero {
-    /* Aquí luego pondremos una foto de fondo del taller o la DFSK */
-    background: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url('../assets/hero-bg.jpg') center/cover;
-    height: 80vh;
+    position: relative;
+    height: 80vh; /* Altura de la sección */
+    background-color: #1a1a2e; /* Un fondo oscuro muy elegante */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden; /* Importante para que los logos no se salgan */
     color: var(--color-blanco);
+}
+
+/* El contenedor que ocupa todo el fondo */
+.marcas-flotantes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Estilo para cada logo individual que rebota */
+.logo-rebote {
+    position: absolute;
+    max-width: 80px; /* Tamaño de los logos al rebotar */
+    opacity: 0.25; /* Súper sutil para no distraer del texto */
+    filter: grayscale(100%) brightness(200%); /* Efecto marca de agua blanca */
+    pointer-events: none; /* Para que no interfieran con clics en el botón */
+}
+
+/* Capa oscura para asegurar legibilidad */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Velo negro semitransparente */
+    z-index: 5;
+}
+
+/* Texto principal al frente */
+.hero-contenido {
+    position: relative;
+    z-index: 10;
     padding: 0 20px;
 }
 
-.hero h1 {
+.hero-contenido h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Sombra para resaltar */
 }
 
-.hero p {
+.hero-contenido p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 600px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
+
+
+/* Capa de velo oscuro para poder leer los textos */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 41, 59, 0.75); /* Tono azul oscuro semitransparente */
+    z-index: 5;
+}
+
+/* Textos principales siempre al frente */
+.hero-contenido {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-contenido h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.hero-contenido p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
 .btn-primary {
     background-color: var(--color-acento);
@@ -149,52 +209,302 @@ section h2::after {
 }
 
 /* =========================================
-   GRID DE TRABAJOS Y MARCAS
+   SECCIÓN ESPECIALIDAD (DFSK 580 Glory)
    ========================================= */
-.grid-trabajos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.especialidad-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.card {
-    background-color: var(--color-blanco);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+.especialidad-texto {
+    flex: 1;
+}
+
+.especialidad-texto h2 {
+    margin-bottom: 0.5rem;
+    text-align: left; /* Alineamos a la izquierda para esta sección */
+}
+
+.especialidad-texto h2::after {
+    margin: 10px 0 0; /* Centramos la línea naranja a la izquierda */
+}
+
+.etiqueta-experiencia {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.lista-especialidad {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.lista-especialidad li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.lista-especialidad i {
+    color: var(--color-acento);
+    margin-right: 10px;
+}
+
+.especialidad-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.especialidad-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
+    /* Esto asegura que la imagen se vea completa y no se corte por los bordes */
+    object-fit: contain; 
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.especialidad-imagen img:hover {
+    transform: translateY(-5px);
+}
+
+/* Ajuste Responsivo para Celulares */
+@media (max-width: 768px) {
+    .especialidad-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .especialidad-texto h2, 
+    .especialidad-texto h2::after {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .especialidad-texto {
+        text-align: center;
+    }
+}
+
+
+/* =========================================
+   SECCIÓN SERVICIOS (Carrusel a 3 Tarjetas)
+   ========================================= */
+.carrusel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1200px; /* Ampliamos un poco el contenedor general */
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Botones de flechas */
+.carrusel-btn {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    z-index: 10;
+    flex-shrink: 0; 
+}
+
+.carrusel-btn:hover {
+    background-color: var(--color-acento);
+    transform: scale(1.1);
+}
+
+.carrusel-contenedor {
+    overflow: hidden; 
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 0; /* Un poco de respiro para las sombras */
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 20px; 
+}
+
+/* Diseño de cada tarjeta (Foto arriba, texto abajo) */
+.tarjeta-servicio {
+    min-width: calc(33.333% - 13.33px); /* Calcula exactamente 3 tarjetas por vista */
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Cambiamos a vertical */
+    overflow: hidden;
+}
+
+.tarjeta-servicio img {
+    width: 100%;
+    height: 200px; /* Altura fija para que todas se vean parejas */
+    object-fit: cover; 
+}
+
+.servicio-info {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.servicio-info h3 {
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.servicio-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Ajuste Responsivo para Tablets (2 tarjetas) */
+@media (max-width: 1024px) {
+    .tarjeta-servicio {
+        min-width: calc(50% - 10px);
+    }
+}
+
+/* Ajuste Responsivo para Celulares (1 tarjeta) */
+@media (max-width: 768px) {
+    .tarjeta-servicio {
+        min-width: 100%; 
+    }
+
+    .carrusel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+    }
+    .carrusel-btn.prev { left: -10px; }
+    .carrusel-btn.next { right: -10px; }
 }
 
 /* =========================================
    BOTÓN FLOTANTE DE WHATSAPP
    ========================================= */
+
 .whatsapp-float {
     position: fixed;
-    width: 60px;
-    height: 60px;
     bottom: 40px;
     right: 40px;
     background-color: #25d366;
     color: #fff;
     border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    padding: 12px 24px; /* Le da el ancho automático según el texto */
+    font-size: 24px; /* Tamaño del ícono */
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px; /* Separación entre el ícono y la palabra */
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-text {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--fuente-principal);
+    letter-spacing: 0.5px;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    background-color: #1ebe57; /* Un verde un poco más oscuro al pasar el mouse */
+}
+
+/* =========================================
+   SECCIÓN CONTACTO
+   ========================================= */
+.contacto-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background-color: var(--color-blanco);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.contacto-info h3 {
+    color: var(--color-primario);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contacto-info p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.info-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-lista i {
+    font-size: 1.5rem;
+    color: var(--color-acento);
+    margin-top: 5px;
+}
+
+.info-lista strong {
+    display: block;
+    color: var(--color-primario);
+}
+
+.contacto-mapa {
+    min-height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Ajuste Responsivo para la sección de contacto */
+@media (max-width: 768px) {
+    .contacto-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+    
+    .contacto-mapa {
+        min-height: 250px;
+    }
 }
 
 /* =========================================
@@ -254,8 +564,11 @@ footer {
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
+        padding: 10px 18px;
+        font-size: 22px;
+    }
+
+    .whatsapp-text {
+        font-size: 14px;
     }
 }
